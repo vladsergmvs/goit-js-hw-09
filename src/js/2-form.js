@@ -1,26 +1,45 @@
 const STORAGE_KEY = 'feedback-form-state',
   formData = { email: '', message: '' },
-  form = document.querySelector('.feedback-form'),
-  inputEmail = document.querySelector('input'),
-  textareaMessage = document.querySelector('textarea');
-
-form.addEventListener('submit', handleSubmit);
-inputEmail.addEventListener('input', handleInput);
-textareaMessage.addEventListener('input', handleInput);
-
-///////////////////////////////////////////////////////////
-function handleSubmit(event) {
+  form = document.querySelector('.feedback-form');
+  
+form.addEventListener('submit', (event) => {
   event.preventDefault();
-  event.currentTarget.reset();
-  localStorage.removeItem(STORAGE_KEY);
-}
+	 console.log( JSON.parse(localStorage.getItem(STORAGE_KEY)));
+   localStorage.removeItem(STORAGE_KEY );
+  form.reset();
 
-function handleInput(event) {
+});
+
+
+form.addEventListener('input', (event)=>{
   formData[event.target.name] = event.target.value.trim();
   localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
-}
+   
+   
+  
+});
+
+
+
 //////////////////////////////////////////////////////////////////
-populateForm();
-function populateForm() {
+
+const populateForm = function (){
   const savedObject = JSON.parse(localStorage.getItem(STORAGE_KEY));
+
 }
+populateForm();
+
+
+// textarea.value = localStorage.getItem(STORAGE_KEY) ?? "";
+
+// form.addEventListener("input", (evt) => {
+//   localStorage.setItem(localStorageKey, evt.target.value);
+// });
+
+// form.addEventListener("submit", (evt) => {
+//   evt.preventDefault();
+// 	console.log(evt.target.elements.message.value);
+//   localStorage.removeItem(localStorageKey);
+//   form.reset();
+// });
+
