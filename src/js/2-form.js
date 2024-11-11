@@ -5,9 +5,7 @@ const STORAGE_KEY = 'feedback-form-state',
        textareaMessage =  document.querySelector('textarea');
   
 
-      //  не виконаний цей пункт ТЗ - При завантаженні сторінки перевір, чи є дані у локальному сховищі.
-      //   Якщо так, використовуй їх для заповнення об'єкта formData.
-      //  не виконаний цей пункт ТЗ - Якщо всі поля заповнені, очисти об’єкт formData .
+    
 ///////////////////////////////////////////////////////////////////
 
   document.addEventListener('DOMContentLoaded', ()=>{   
